@@ -67,6 +67,11 @@ class LogicalBase(object):
         self._tree_ref = self._delete(
             self._follow(self._tree_ref), key)
 
+    def find_max(self):
+        if not self._storage.locked:
+            self._refresh_tree_ref()
+        return self._find_max(self._follow(self._tree_ref))
+
     def _follow(self, ref):
         return ref.get(self._storage)
 

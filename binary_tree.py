@@ -147,6 +147,6 @@ class BinaryTree(LogicalBase):
         while True:
             next_node = self._follow(node.right_ref)
             if next_node is None:
-                return node
+                return node.key, self._follow(node.value_ref)
             node = next_node
 

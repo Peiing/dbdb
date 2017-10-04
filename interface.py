@@ -42,3 +42,8 @@ class DBDB(object):
 
     def __len__(self):
         return len(self._tree)
+
+    def find_max(self):
+        return self._tree.find_max()
+        
+
